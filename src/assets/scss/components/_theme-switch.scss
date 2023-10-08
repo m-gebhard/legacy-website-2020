@@ -1,0 +1,88 @@
+.theme-switch {
+    @include spacing(padding, m);
+
+    //opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 12px;
+
+    @include bp(m) {
+        //position: fixed;
+        //right: 20px;
+        //top: 20px;
+    }
+}
+
+.theme-switch__content {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: var(--font-contrast);
+    border-radius: $border-radius-default;
+
+    input {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        -webkit-appearance: none;
+        outline: none;
+        border: none;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        transition: transform $transition-regular;
+    }
+
+    @include bp(m) {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.theme-switch--transitioning .theme-switch__content svg {
+    animation-name: bubble-backwards;
+    animation-delay: 0s;
+    animation-duration: $transition-fast;
+}
+
+.theme-switch--transitioning .theme-switch__content--checked svg {
+    animation-name: bubble;
+}
+
+.theme-switch__content--checked {
+    svg {
+        transform: translate(-50%, -50%) scaleX(-1);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(-50%, -50%) scaleX(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scaleX(0.5);
+    }
+    100% {
+        transform: translate(-50%, -50%) scaleX(-1);
+    }
+}
+
+@keyframes bubble-backwards {
+    0% {
+        transform: translate(-50%, -50%) scaleX(-1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scaleX(0.5);
+    }
+    100% {
+        transform: translate(-50%, -50%) scaleX(1);
+    }
+}

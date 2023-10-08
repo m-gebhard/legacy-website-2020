@@ -1,0 +1,112 @@
+.project-view {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+}
+
+.project-view .swiper-pagination {
+    position: relative;
+}
+
+.project-view__list {
+    @include spacing(margin, s, top);
+
+    flex-direction: row !important;
+}
+
+.project-view__list-item {
+    @include spacing(padding, xs);
+
+    position: relative;
+    margin: 0;
+    max-height: 360px;
+
+    user-select: none;
+    color: var(--font-dark);
+    transition: all $transition-regular;
+    border-radius: $border-radius-default;
+}
+
+.project-view__list-item-content {
+    @include spacing(padding, s);
+
+    cursor: pointer;
+    position: relative;
+    border-radius: inherit;
+    box-shadow: var(--box-shadow);
+    background: var(--background-darkest);
+    transition: background $transition-fast;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+        opacity: 0.2;
+        background: var(--accent);
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        border-top-right-radius: $border-radius-default;
+        transition: background $transition-fast;
+    }
+
+    @include bp(m) {
+        &:hover {
+            background: var(--background);
+
+            &:after {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.project-view__list-item-title {
+    hyphens: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.project-view__list-item-category {
+    @include spacing(margin, xs, top);
+    @include text(p3);
+
+    opacity: 0.75;
+    color: var(--font-dark);
+    text-transform: uppercase;
+
+    hyphens: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.project-view__list-item-image {
+    @include spacing(margin, s, top);
+
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: $border-radius-default / 2;
+
+    @include bp(l) {
+        height: 170px;
+    }
+}
+
+// project types stylings
+
+.project-view__list-item-content--type-0:after {
+    background: var(--primary);
+}
+.project-view__list-item-content--type-1:after {
+    background: var(--accent);
+}
+.project-view__list-item-content--type-2:after {
+    background: var(--font-dark);
+}

@@ -1,0 +1,36 @@
+export default [
+    {
+        name:                   'light',
+        '--primary':            '#0b88e8',
+        '--primary-light':      '#7ac2f9',
+        '--accent':             '#aa66ff',
+        '--background':         '#fff',
+        '--background-dark':    '#f6f6f6',
+        '--background-darkest': '#efefef',
+        '--font-light':         '#fff',
+        '--font-dark':          '#232323',
+        '--font-hero':          '#000',
+        '--font-contrast':      '#fff',
+        '--white':              '#fff',
+        '--grey':               '#f2f2f2',
+        '--black':              '#000',
+        '--box-shadow':         '0 0 1px -1px rgba(0,0,0,.2), 0 1px 2px 0 rgba(0,0,0,.14), 0 1px 2px 0 rgba(0,0,0,0)'
+    },
+    {
+        name:                   'dark',
+        '--primary':            '#f2da9b',
+        '--primary-light':      '#ffb65e',
+        '--accent':             '#eeffad',
+        '--background':         '#333',
+        '--background-dark':    '#212121',
+        '--background-darkest': '#191919',
+        '--font-light':         '#141414',
+        '--font-dark':          '#888',
+        '--font-hero':          '#ccc',
+        '--font-contrast':      '#333',
+        '--white':              '#fff',
+        '--grey':               '#f2f2f2',
+        '--black':              '#000',
+        '--box-shadow':         '0 0 4px -1px rgba(0,0,0,.2), 0 3px 2px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)'
+    },
+];

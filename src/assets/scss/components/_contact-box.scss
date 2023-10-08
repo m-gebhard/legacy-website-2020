@@ -1,0 +1,232 @@
+.contact-box {
+    @include spacing(margin, s, top);
+
+    display: flex;
+    flex-flow: column wrap;
+
+    @include bp(l) {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+}
+
+.contact-box__scroll-top {
+    @include spacing(margin, l, top);
+
+    display: flex;
+    justify-content: center;
+    order: 3;
+
+    .scroll-top {
+        align-self: center;
+
+        @include bp(m) {
+            transform: translateY(-15px);
+        }
+    }
+}
+
+.contact-box__form {
+    @include spacing(margin, l, top);
+
+    order: 2;
+    flex: 5;
+    text-align: left;
+
+    @include bp(m) {
+        margin-top: 0;
+    }
+    @include bp(l) {
+        order: 1;
+    }
+}
+
+.contact-box__form-submit {
+    @include spacing(padding, m, left right);
+    @include spacing(padding, s, top bottom);
+    @include spacing(margin, m, bottom);
+    @include spacing(margin, m, top);
+    @include text(p3);
+
+    width: 100%;
+    cursor: pointer;
+    color: var(--font-contrast);
+    background: var(--accent);
+    border-radius: $border-radius-default;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    transition: background $transition-regular;
+
+    svg {
+        transform: scale(0);
+        max-width: 0;
+        overflow: hidden;
+        transition: transform $transition-regular, margin-left $transition-regular, max-width $transition-regular;
+        transform-origin: right;
+    }
+
+    @include bp(m) {
+        width: auto;
+
+        &:hover {
+            background: var(--primary-light);
+
+            svg {
+                margin-left: 10px;
+
+                max-width: 50px;
+                transform: scale(1);
+            }
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background: var(--grey);
+    }
+}
+
+.contact-box__row {
+    display: flex;
+    flex-flow: column wrap;
+
+    @include bp(m) {
+        flex-flow: row wrap;
+    }
+}
+
+.contact-box__input {
+    @include spacing(margin, s, bottom);
+
+    position: relative;
+    flex: 1;
+
+    label {
+        @include spacing(margin, xs, bottom);
+        @include text(p2);
+
+        display: inline-flex;
+        color: var(--font-dark);
+    }
+
+    input, textarea {
+        @include text(p3);
+
+        width: 100%;
+        padding: 10px;
+        padding-left: 15px;
+        outline: none;
+        border-radius: $border-radius-default;
+        color: var(--font-dark);
+        caret-color: var(--accent);
+        background: var(--background-dark);
+        border: none;
+    }
+
+    textarea {
+        min-height: 200px;
+        resize: vertical;
+    }
+
+    @include bp(m) {
+        margin-right: 20px;
+    }
+
+    > div {
+        display: flex;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            opacity: 0.5;
+            background: var(--primary);
+            border-radius: $border-radius-default 0 0 $border-radius-default;
+        }
+    }
+}
+
+.contact-box__details {
+    @include spacing(padding, m);
+
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    order: 1;
+    flex: 2;
+    text-align: center;
+    border-radius: $border-radius-default;
+    background: none;
+
+
+    h3 {
+        @include spacing(padding, s, bottom);
+
+        color: var(--font-dark);
+    }
+
+    @include bp(l) {
+        order: 2;
+        margin-top: 35px;
+
+        &:after {
+            left: 0;
+            width: 1px;
+            height: 100%;
+            transform: none;
+        }
+    }
+}
+
+.contact-box__details-info {
+    @include spacing(margin, xs, bottom);
+    @include text(p3);
+
+    width: 60%;
+    color: var(--font-dark);
+
+    @include bp(m) {
+        width: 75%;
+    }
+}
+
+.contact-box__details-item {
+    @include spacing(margin, s, top);
+    @include text(p3);
+
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+
+    svg {
+        color: var(--font-dark);
+        opacity: 0.75;
+    }
+
+    span, a {
+        @include spacing(margin, xs, right);
+
+        text-decoration: none;
+        color: var(--accent);
+
+        span {
+            opacity: 0.9;
+            color: var(--font-dark);
+        }
+    }
+
+    a {
+        @include bp(m) {
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}

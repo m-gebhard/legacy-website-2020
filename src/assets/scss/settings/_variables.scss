@@ -1,0 +1,104 @@
+$color-primary: #0b88e8;
+$color-primary-light: #7ac2f9;
+$color-accent: #aa66ff;
+$color-background: #fff;
+$color-background-dark: #f6f6f6;
+$color-background-darkest: #e9e9e9;
+$color-font-light: #fff;
+$color-font-dark: #232323;
+$color-font-hero: #232323;
+$color-font-contrast: $color-font-light;
+$color-black: #000;
+$color-grey: #f2f2f2;
+$color-white: #fff;
+
+@include css-vars((
+    --primary: $color-primary,
+    --primary-light: $color-primary-light,
+    --accent: $color-accent,
+    --background: $color-background,
+    --background-dark: $color-background-dark,
+    --background-darkest: $color-background-darkest,
+    --font-light: $color-font-light,
+    --font-dark: $color-font-dark,
+    --font-hero: $color-font-hero,
+    --font-contrast: $color-font-contrast,
+    --white: $color-white,
+    --grey: $color-grey,
+    --black: $color-black,
+));
+
+$font-default: 'Open Sans';
+
+$transition-long: 0.5s;
+$transition-regular: 0.35s;
+$transition-fast: 0.25s;
+
+$border-radius-default: 3px;
+$box-shadow-bottom: 0px 3px 6px -4px rgba(0, 0, 0, 0.55);
+
+$breakpoints: (
+    xs: 0,
+    s: 421px,
+    m: 701px,
+    l: 1001px,
+    xl: 1301px
+);
+
+$spacings: (
+    xs: 4px 4px 6px 6px 8px,
+    nxs: 16px 14px 10px 8px 8px,
+    s: 14px 14px 16px 18px 20px,
+    m: 20px 20px 22px 24px 28px,
+    l: 30px 30px 35px 35px 40px,
+    xl: 20px 40px 75px 140px 260px,
+    huge: 20px 40px 50px 50px 55px,
+    headline: 50px 60px 60px 60px 60px,
+    subheadline: 60px 65px 70px 80px 85px,
+);
+
+$fonts: (
+    h1: (
+        size: 26.00px 36.00px 40.00px 42.00px 60.00px,
+        height: 60.00px 66.00px 68.00px 72.00px 80.00px,
+        //family: 'Short Stack',
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    h2: (
+        size: 32.00px 34.00px 38.00px 38.00px 40.00px,
+        height: 34.00px 34.00px 38.00px 38.00px 42.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    h3: (
+        size: 20.00px 20.00px 22.00px 22.00px 24.00px,
+        height: 30.00px 30.00px 34.00px 34.00px 36.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    p1: (
+        size: 18.00px 18.00px 20.00px 22.00px 24.00px,
+        height: 27.00px 27.00px 27.00px 27.00px 28.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    p2: (
+        size: 16.00px 18.00px 18.00px 20.00px 20.00px,
+        height: 27.00px 27.00px 27.00px 27.00px 28.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    p3: (
+        size: 15.00px 15.00px 16.00px 16.00px 16.00px,
+        height: 20.00px 20.00px 21.00px 21.00px 21.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+    icon: (
+        size: 26.00px 26.00px 28.00px 28.00px 30.00px,
+        height: 34.00px 34.00px 38.00px 38.00px 42.00px,
+        family: $font-default,
+        letterspacing: 0.01em,
+    ),
+);

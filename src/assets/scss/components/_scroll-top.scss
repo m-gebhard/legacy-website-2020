@@ -1,0 +1,29 @@
+.scroll-top {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+
+    cursor: pointer;
+    background: var(--accent);
+    border-radius: $border-radius-default;
+    transition: opacity $transition-fast, background $transition-fast;
+
+    @include bp(m) {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+
+        &:hover {
+            background: var(--primary-light);
+        }
+    }
+}
+
+.scroll-top__icon {
+    @include text(h3);
+
+    color: var(--font-contrast);
+}

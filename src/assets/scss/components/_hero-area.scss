@@ -1,0 +1,129 @@
+.hero-area {
+    @include spacing(padding, xl, left right);
+
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(0 0, 50% 4%, 100% 0, 100% 50%, 100% 100%, 50% 96%, 0 100%, 0 50%);
+    padding-bottom: 70px;
+    background-image: url(../images/background_xs.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include bp(m) {
+        background-size: auto;
+        background-image: url(../images/background_xl.jpg);
+    }
+
+    @include bp(xl) {
+        background-size: cover;
+    }
+}
+
+.hero-area-content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    color: var(--font-hero);
+}
+
+.hero-area-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.9;
+    background: var(--background-dark);
+
+    @include bp(m) {
+        opacity: 0.75;
+    }
+}
+
+.hero-area__title {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.hero-area__info {
+    @include text(p3);
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    svg {
+        @include spacing(margin, xs, left right);
+        opacity: 0.75;
+    }
+}
+
+.hero-area__icon {
+    @include spacing(margin, s, top bottom);
+    @include text(h2);
+
+    color: var(--primary);
+}
+
+.hero-area__divider {
+    @include spacing(margin, m, bottom);
+
+    width: 100px;
+    height: 2px;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to right, var(--primary), var(--accent));
+}
+
+.hero-area__anchor-list {
+    @include spacing(margin, xs, top);
+    @include text(h3);
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.hero-area__anchor-list-item {
+    @include spacing(padding, xs, left right bottom);
+    @include text(p2);
+
+    font-weight: 300;
+    text-align: center;
+    transition: color $transition-regular, opacity $transition-regular;
+
+    &:after {
+        @include spacing(margin, xs, left);
+
+        content: '|';
+        color: var(--accent);
+    }
+
+    &:last-of-type:after {
+        display: none;
+    }
+}
+
+.hero-area__jump-caret {
+    @include spacing(padding, s);
+    @include text(h2);
+
+    position: absolute;
+    bottom: 60px;
+
+    opacity: 0.75;
+    cursor: pointer;
+    color: var(--font-dark);
+    transform: translateX(-50%);
+    animation: 2s bounce infinite;
+    line-height: 20px !important;
+
+    &:hover {
+        color: var(--accent);
+        animation-play-state: paused;
+    }
+}
